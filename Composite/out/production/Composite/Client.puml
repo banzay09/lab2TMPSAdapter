@@ -1,0 +1,63 @@
+@startuml
+'https://plantuml.com/object-diagram
+object Clinet
+interface GraficComponent
+class Window
+class Panel
+class Button
+class Button1
+class Button2
+
+Clinet ...> GraficComponent
+Panel <...GraficComponent
+Button <...GraficComponent
+Panel ---> Window
+Button --->Window
+Button1 --->Panel
+Button2 --->Panel
+
+interface GraficComponent{
++render(): void
+}
+
+class Window {
++width: double
++hight: double
++fullScreen: boolean
++children: []
++render(): void
+}
+
+class Panel{
++width: double
++parent: GraficComponent
++children:[]
++render(): void
+}
+
+class Button{
++width: double
++height: double
++color: String
++label: String
++render(): void
+}
+
+class Button1{
++width: double
++height: double
++color: String
++label: String
++render(): void
+}
+
+class Button2{
++width: double
++height: double
++color: String
++label: String
++render(): void
+}
+
+
+@enduml
